@@ -23,7 +23,11 @@ if (isset($input['entry'][0]['messaging'][0]['sender']['id'])) {
 	echo $bilgiler[1];
 	echo $bilgiler[2];
 	
+	$sehirler=explode("->", $bilgiler[1]);
+	echo $sehirler[0]; // dilim1
+	echo $sehirler[1];
 	
+	$xml = file_get_contents("'http://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/UK/GBP/en-GB/'.$sehirler[0].'-sky/'.$sehirler[1].'-sky/'.$bilgiler[0].'/'");
 	
 	$url = 'https://graph.facebook.com/v2.6/me/messages?access_token=EAAZAkqHoon8EBAP7XJjyjucsUEuhkkE7CMxZCDjAMje30nZAjgcZBltyIkUEK3SG1ZCYJPikVN874gbZCrhS9y6P7hrAoBwOZC3mMBtlpncoL9WLZC3BzdtmmMC4I8amPTRTIOPl1yw1O9avB63shH5oMHCPpMtVXps1DZBNiyGtmiwZDZD';
 	
@@ -35,7 +39,7 @@ if (isset($input['entry'][0]['messaging'][0]['sender']['id'])) {
         "id":"' . $sender . '"
         },
         "message":{
-            "text": "'. $bilgiler[0] .'  Tarihinde ' . $bilgiler[1]. ' istikametinde ' . $bilgiler[2]. ' kisilik yer " 
+            "text": "'. $bilgiler[0] .'  Tarihinde ' . $bilgiler[1]. ' istikametinde ' . $bilgiler[2]. ' kisilik yer '.$xml.' lar mevcut " 
         }
     }';
 	/* curl setting to send a json post data */
