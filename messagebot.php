@@ -18,6 +18,11 @@ if (isset($input['entry'][0]['messaging'][0]['sender']['id'])) {
 	$sender = $input['entry'][0]['messaging'][0]['sender']['id']; //sender facebook id
 	$message = $input['entry'][0]['messaging'][0]['message']['text']; //text that user sent
 	
+	$bilgiler = explode(",", $message);
+	echo $bilgiler[0]; // dilim1
+	echo $bilgiler[1];
+	echo $bilgiler[2];
+	
 	$sehirler=explode("->", $bilgiler[1]);
 	echo $sehirler[0]; // dilim1
 	echo $sehirler[1];
