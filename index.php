@@ -27,7 +27,7 @@ if (isset($input['entry'][0]['messaging'][0]['sender']['id'])) {
 	//echo $sehirler[0]; // dilim1
 	//echo $sehirler[1];
 	
-	$urlpath="http://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/UK/GBP/en-GB/'.$sehirler[0].'-sky/'.$sehirler[1].'-sky/'.$bilgiler[0].'/?apikey=it393887540691813618334846166341";
+	$urlpath="http://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/UK/GBP/en-GB/$sehirler[0]-sky/$sehirler[1]-sky/$bilgiler[0]/?apikey=it393887540691813618334846166341";
 	
 	$xml = file_get_contents($urlpath);
 	
