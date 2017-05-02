@@ -42,7 +42,7 @@ if (isset($input['entry'][0]['messaging'][0]['sender']['id'])) {
 	
 	$context  = stream_context_create($opts);
 	
-	$result = file_get_contents("http://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/UK/GBP/en-GB/'.$sehirler[0].'-sky/'.$sehirler[1].'-sky/'.$bilgiler[0].'/", false, $context);
+	$result2 = file_get_contents("http://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/UK/GBP/en-GB/'.$sehirler[0].'-sky/'.$sehirler[1].'-sky/'.$bilgiler[0].'/", false, $context);
 	
 	//$urlpath=
 	
@@ -58,7 +58,7 @@ if (isset($input['entry'][0]['messaging'][0]['sender']['id'])) {
         "id":"' . $sender . '"
         },
         "message":{
-            "text": " '.$bilgiler[0].'   Tarihinde '.$bilgiler[1].' istikametinde  '.$bilgiler[2].' kisilik yer '.$result.' lar mevcut " 
+            "text": " '.$bilgiler[0].'   Tarihinde '.$bilgiler[1].' istikametinde  '.$bilgiler[2].' kisilik yer '.$result2.' lar mevcut " 
         }
     }';
 	/* curl setting to send a json post data */
