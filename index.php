@@ -19,13 +19,13 @@ if (isset($input['entry'][0]['messaging'][0]['sender']['id'])) {
 	$message = $input['entry'][0]['messaging'][0]['message']['text']; //text that user sent
 	
 	$bilgiler = explode(",", $message);
-	echo $bilgiler[0]; // dilim1
-	echo $bilgiler[1];
-	echo $bilgiler[2];
+	//echo $bilgiler[0]; // dilim1
+	//echo $bilgiler[1];
+	//echo $bilgiler[2];
 	
 	$sehirler=explode("->", $bilgiler[1]);
-	echo $sehirler[0]; // dilim1
-	echo $sehirler[1];
+	//echo $sehirler[0]; // dilim1
+	//echo $sehirler[1];
 	
 	$xml = file_get_contents("http://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/UK/GBP/en-GB/$sehirler[0]-sky/$sehirler[1]-sky/$bilgiler[0]/?apikey=it393887540691813618334846166341");
 	
@@ -39,7 +39,7 @@ if (isset($input['entry'][0]['messaging'][0]['sender']['id'])) {
         "id":"' . $sender . '"
         },
         "message":{
-            "text": "'. $bilgiler[0] .'  Tarihinde ' . $bilgiler[1]. ' istikametinde ' . $bilgiler[2]. ' kisilik yer '.$xml.' lar mevcut " 
+            "text": " $bilgiler[0]   Tarihinde  $bilgiler[1] istikametinde  $bilgiler[2] kisilik yer $xml lar mevcut " 
         }
     }';
 	/* curl setting to send a json post data */
